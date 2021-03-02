@@ -10,5 +10,4 @@ jobs:
         uses: dante-ev/latex-action@master
         with:
           root_file: ituJournalPaper.tex
-          compiler: XeLaTeX
           args: -xelatex -latexoption=-file-line-error -latexoption=-interaction=nonstopmode
