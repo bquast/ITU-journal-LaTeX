@@ -16,6 +16,13 @@
 \usepackage[labelfont=bf,labelsep=endash,font=footnotesize]{caption}
 \usepackage{tabu}
 \usepackage{xcolor}
+\usepackage[
+    backend=biber, 
+    natbib=true,
+    style=numeric,
+    maxnames=50,
+    sorting=none
+]{biblatex}
 \usepackage[hidelinks]{hyperref}
 \usepackage[hang]{footmisc}
 \usepackage[normalem]{ulem}
@@ -26,8 +33,11 @@
 \usepackage{wrapfig}
 %%%=========%%%
 
+%% add bibliography file
+\addbibresource{ituJournalPaper.bib}
 
 %%%== definitions of new commands/redefinition of existing ones, specifically for this template ==%%%
+%%%== if you are having difficulties with the font Cambria, comment out the following two lines 41 and 42 and try again to compile your document using XeLaTeX  ==%%%
 %\setromanfont{Cambria}
 %\setmathfont{Cambria}
 
@@ -89,18 +99,15 @@
 %%%== TITLE AND AUTHOR DEFINITIONS GO HERE ==%%%
 \title{\large{\textbf{\uppercase{Template for submitting papers to the ITU journal on Future and Evolving Technologies (ITU J-FET)}}}}
 
-\def\correspondingauthor{\ITUnote{Corresponding author: Author's name, e-mail}}
 
+%Please spell out first names and surnames
 \author[1]{\normalsize{Author's name}}
 \author[2]{\normalsize{second author's name}}
-\author[ ]{\normalsize{etc. (Please spell out first names and surnames)}}
 
 \affil[1]{\normalsize{First author's affiliation and full address}}
 \affil[2]{\normalsize{Second author's affiliation and full address, etc.}}
-\affil[ ]{\correspondingauthor{}}
 
-
-\date{\vspace{-12pt}\endgraf\rule{\textwidth}{1pt}}
+\date{\vspace{-12pt}{\small NOTE: Corresponding author: Author’s name, e-mail} \\  \endgraf\rule{\textwidth}{1pt}}
 
 %%%=========%%%
 
@@ -119,7 +126,7 @@
 %%= abstract text � SUBSTITUTE HERE! =%%
 \begin{abstract}
 \textit{This template provides detailed instructions for submitting papers to ITU J-FET.
-Papers must be in English and in black font.
+Papers must be in English and in black font, no page limit.
 The abstract should appear in italics at the top, below the title and author's area. 
 The abstract should normally contain 150 to 200 words, and in no case shall it exceed 300 words.
 All abbreviations and acronyms used in the abstract should be defined, and in the text the first time used.
@@ -142,7 +149,7 @@ Do not cite references in the abstract.}
 %%= start of sectioning � MODIFY EACH TITLE AND LABEL AS YOU PLEASE =%%
 \section{Introduction} 
 \label{sec:intro}
-This template provides detailed instructions for submitting papers to ITU J-FET. The next sections describe style, fonts and spacing to adopt. Please use this \LaTeX\ template for your paper. Additional instructions on submitting your paper can be found in the \textcolor{blue}{\href{https://www.itu.int/en/journal/Pages/submission-guidelines.aspx}{Author's Guidelines}}. Please address any enquiries or suggestions about this template to the ITU Journal Team at \ITUurl{journal@itu.int}.
+This template provides detailed instructions for submitting papers to ITU J-FET. The next sections describe style, fonts and spacing to adopt. Please use this \LaTeX\ template for your paper. \ITUpar Additional instructions on submitting your paper can be found in the \textcolor{blue}{\href{https://www.itu.int/en/journal/Pages/submission-guidelines.aspx}{Author's Guidelines}}.  Please address any enquiries or suggestions about this template to the ITU Journal Team at \ITUurl{journal@itu.int}.
 
 
 \section{Formatting}
@@ -153,9 +160,7 @@ The top margin must be 2.5 cm, and the left and right margins must be 1.5 cm.
 All text must be in a two-column format.
 Columns are to be 8.5 cm wide, with a 1 cm space between them.
 Text must be fully justified, A4 size (21 cm wide by 29.7 cm long, or 8.27 inches by 11.7 inches).
-If the last page of your paper is only partially filled, arrange the columns so that they are evenly balanced if possible, rather than having one long column.
-The balancing can be achieved using the \texttt{\textbackslash balance} command before the last section of the left column of the last page.
-\ITUnote{This command should be avoided if footnotes appear at the bottom of the left column of the last page.}
+\ITUpar If the last page of your paper is only partially filled, arrange the columns so that they are evenly balanced if possible, rather than having one long column.
 
 
 \section{Title page section}
@@ -174,18 +179,18 @@ To obtain the proper paragraph spacing, please use the command \texttt{\textback
 
 \section{Major headings}
 \label{sec:sec5}
-Major headings (for example, ``1. INTRODUCTION'') are predefined in the template, and \textbf{should not} be changed.
+Major headings (for example, ``1. INTRODUCTION'') are predefined in the template, and \textbf{should not} be changed.\ITUpar
 
 %%= subsection example =%%
 \subsection{Subheadings}
 \label{ssec:sec5.1}
-Subheadings are predefined in the template, and \textbf{should not} be changed.
+Subheadings are predefined in the template, and \textbf{should not} be changed.\ITUpar
 
 %%= subsubsection example =%%
 \subsubsection{Sub-subheading}
 \label{sssec:sec5.1.1}
 Sub-subheadings, as in this paragraph, are discouraged.
-However, if you must use them, they should appear as predefined in the template, and \textbf{should not} be changed.
+However, if you must use them, they should appear as predefined in the template, and \textbf{should not} be changed.\ITUpar
 
 
 \section{Images}
@@ -195,7 +200,7 @@ Images must appear within the designated margins.
 Caption and number every image.
 Figure captions must be placed on the bottom, not top, of the figure.
 Table captions must be located on the top of the table.
-Keep titles with images. 
+Keep titles with images.\ITUpar 
 
 %%= example figure =%%
 \startfigure
@@ -237,68 +242,43 @@ PL(D)=PL(D)+10\log
 \end{equation}
 %%======%%
 
-%%= last page balancing � place command before the last section of the left column of the last page (pay attention with footnotes), remove if not needed =%%
-%\balance
-%%======%%
-
-
 \section{Footnotes}
 \label{sec:sec7}
 Use footnotes sparingly (or not at all!)\ITUfootnote{To obtain the right formatting for the footnotes, use the predefined command \texttt{\textbackslash{ITUfootnote}}}.
-To help your readers, avoid using footnotes altogether and include necessary peripheral observations in the text (within parentheses, if you prefer, as in this sentence).
+To help your readers, avoid using footnotes altogether and include necessary peripheral observations in the text (within parentheses, if you prefer, as in this sentence).\ITUpar
 
 
 \section{Using references}
 \label{sec:sec8}
-List and number all bibliographical references at the end of the paper, and refer to them in the text as shown in this sentence \cite{bib1}.
-
+List and number all bibliographical references at the end of the paper, and refer to them in the text as shown in this sentence \cite{author2021}.\ITUpar
 
 \section{Page numbering}
 \label{sec:sec9}
-Please number all pages of your paper.
-
+Please number all pages of your paper.\ITUpar
 
 \section{Authoring recommendations}
 \label{sec:sec10}
 Define abbreviations and acronyms the first time they are used in the text, even if they have already been defined in the abstract.
 Abbreviations and acronyms should be avoided in the title. \ITUpar
-Units should be expressed as much as possible in international units, and a dot (``.'') should be used to express decimal points (not ``,'').
+Units should be expressed as much as possible in international units, and a dot (``.'') should be used to express decimal points (not ``,'').\ITUpar
 
 
 \section{Conclusion}
 \label{sec:sec11}
-The main conclusions may be presented in a short final section.
+The main conclusions may be presented in a short final section.\ITUpar
 
 
 \section*{Acknowledgement}
 \label{sec:ackn}
 You may list here colleagues, sponsors and financial supporter that you wish to acknowledge.
-This section is not required.
+This section is not required.\ITUpar
 
 
-%%= start of bibliography =%%
-\begin{thebibliography}{9}
-
-\bibitem{bib1}
-Here goes the first item of the bibliography.
-
-\bibitem{bib2}
-The margins are predefined in the template, and \textbf{should not} be changed.
-
-\bibitem{bib3}
-To make sure the references are correctly displayed in the text, compile twice the document.
-
-\bibitem{bib4}
-M. Adolph,
-"Big Data: Big today, normal tomorrow",
-in ITU-T Technology Watch Report,
-Geneva, Switzerland, ITU, 2013. Available:
-{\ITUurl{https://www.itu.int/dms_pub/itu-t/oth/23/01/T23010000220001PDFE.pdf}}
-
-\end{thebibliography}
+%%= bibliography =%%
+\printbibliography 
 %%======%%
 
-\newpage
+\ITUpar
 \section*{Authors}
 \label{sec:auth}
 
